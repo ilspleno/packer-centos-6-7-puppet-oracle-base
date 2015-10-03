@@ -44,14 +44,14 @@
 		  "modifyvm",
 		  "{{.Name}}",
 		  "--cpus",
-		  "2"
+		  "1"
 		]
 	      ]
 	    }
 	],
 	"provisioners": [{ "type": "shell", "inline": [
 		"sudo yum -y install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-6.noarch.rpm",
-		"sudo yum -y install puppet"
+		"sudo yum -y install puppet" ] }
 	],
 	"post-processors": [
 		[{
