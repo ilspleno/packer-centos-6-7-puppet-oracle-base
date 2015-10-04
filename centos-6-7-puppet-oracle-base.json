@@ -54,7 +54,7 @@
 		"sudo yum -y install puppet" ] }
 	],
 	"post-processors": [
-		{
+		[{
 		    "type": "vagrant",
 		    "keep_input_artifact": false
 		},
@@ -67,6 +67,6 @@
 			"provider": "virtualbox",
 			"created_at": "{{timestamp}}"
 		    }
-		}
+		}]
 	    ]	
 }
