@@ -3,14 +3,14 @@
 # Vagrant specific
 date > /etc/vagrant_box_build_time
 
-# Create user and groups
-groupadd vagrant -g 999
-useradd vagrant -g vagrant -G wheel -u 900 -s /bin/bash
-echo "vagrant" | passwd --stdin vagrant
-
-# sudo
-echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
-sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
+## Create user and groups
+#groupadd vagrant -g 999
+#useradd vagrant -g vagrant -G wheel -u 900 -s /bin/bash
+#echo "vagrant" | passwd --stdin vagrant
+#
+## sudo
+#echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
+#sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
 # Installing vagrant keys
 mkdir -pm 700 /home/vagrant/.ssh
