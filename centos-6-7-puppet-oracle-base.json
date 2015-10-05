@@ -50,15 +50,29 @@
 	      ]
 	    }
 	],
-	"provisioners": [{ "type": "shell", "inline": [
-		"sudo yum -y install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-6.noarch.rpm",
-		"sudo yum -y install puppet" ] },
-		{
-			"type": "shell",
-			"execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-			"script": "scripts/cleanup.sh"
-		}
-	],
+	"provisioners": [
+        	{
+            		"type": "shell",
+            		"scripts": [
+                		"scripts/base.sh",
+				"scripts/puppet.sh",
+                		"scripts/virtualbox.sh",
+                		"scripts/vmware.sh",
+                		"scripts/vagrant.sh",
+                		"scripts/dep.sh",
+                		"scripts/cleanup.sh",
+                		"scripts/zerodisk.sh"
+            		],
+            		"override": {
+                			"virtualbox-iso": {
+                    			"execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'"
+                		},
+                			"vmware-iso": {
+                    			"execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'"
+                		}
+            		}
+        	}
+    	],
 	"post-processors": [
 		[{
 		    "type": "vagrant",
