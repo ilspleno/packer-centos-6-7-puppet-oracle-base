@@ -1,7 +1,11 @@
 #!/bin/bash
+whoami > /tmp/whoami
+
+## Very temporary
+#echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 # Update the box
-yum -y update
+#yum -y update
 yum -y groupinstall "Development Tools"
 yum -y install wget kernel-devel vim wget curl rsync
 
