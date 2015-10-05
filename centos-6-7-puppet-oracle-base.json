@@ -66,10 +66,7 @@
             		"override": {
                 			"virtualbox-iso": {
                     			"execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'"
-                		},
-                			"vmware-iso": {
-                    			"execute_command": "echo 'vagrant'|sudo -S bash '{{.Path}}'"
-                		}
+                		    }
             		}
         	}
     	],
