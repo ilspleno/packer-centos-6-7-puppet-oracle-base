@@ -18,7 +18,7 @@
 	      "disk_size": 125000,
 	      "hard_drive_interface": "sata",
 	      "guest_os_type": "RedHat_64",
-	      "headless": true,
+	      "headless": false,
 	      "http_directory": "http",
 	      "iso_urls": [
 		"iso/CentOS-6.7-x86_64-minimal.iso",

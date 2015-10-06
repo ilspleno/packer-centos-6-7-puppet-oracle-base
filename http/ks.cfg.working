@@ -38,13 +38,23 @@ reboot
 
 %packages
 @base
+@core
 @Development Tools
-kernel-headers
+openssl-devel
+readline-devel
+zlib-devel
 kernel-devel
+kernel-headers
+vim
 wget
+curl
+rsync
+facter
 %end
 
 %post --log=/root/my-post-log
+yum -y install kernel-devel kernel-headers wget
+yum -y update
 
 # vagrant
 groupadd vagrant -g 999
@@ -56,6 +66,6 @@ echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
 # Put facter on the path after it's installed
-#echo "export PATH=/opt/puppetlabs/bin:\$PATH" > /etc/profile.d/puppet.sh
+echo "export PATH=/opt/puppetlabs/bin:\$PATH" > /etc/profile.d/puppet.sh
 
 %end
