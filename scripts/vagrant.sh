@@ -19,4 +19,6 @@ chmod 0600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 
 # Customize the message of the day
-echo 'Oracle Base Environment' > /etc/motd
+echo "Used operating:"
+echo `whoami`
+#sudo "echo 'Oracle Base Environment' > /etc/motd"
