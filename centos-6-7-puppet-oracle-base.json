@@ -99,13 +99,24 @@
 		},
 		{
 		    "type": "atlas",
-		    "only": ["vmware-iso","virtualbox-iso"],
+		    "only": ["virtualbox-iso"],
 		    "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
 		    "artifact_type": "vagrant.box",
 		    "metadata": {
 			"provider": "virtualbox",
 			"created_at": "{{timestamp}}"
 		    }
-		}]
+		},
+		{
+			"type": "atlas",
+			"only": ["vmware-iso"],
+		    	"artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
+			"artifact_type": "vagrant.box",
+			"metadata": {
+				"provider": "vmware_desktop",
+				"created_at": "{{timestamp}}"
+			}
+		}
+		]
 	    ]	
 }
