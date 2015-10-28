@@ -13,4 +13,4 @@ sudo yum -y install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-6.noarc
 sudo yum -y install curl rsync
 
 # Tweak sshd to prevent DNS resolution (speed up logins)
-#sudo echo 'UseDNS no' >> /etc/ssh/sshd_config
+sudo echo 'UseDNS no' >> /etc/ssh/sshd_config
